@@ -37,6 +37,12 @@ namespace CustomBarnKit
             }
         }
 
+        public void OnDestroy()
+        {
+            GameEvents.onLevelWasLoaded.Remove(LoadUpgradesPricesSceneChange);
+            GameEvents.onEditorRestart.Remove(LoadUpgradesPrices);
+        }
+
         private void BreakStuff()
         {
             if (brokeStuff)
